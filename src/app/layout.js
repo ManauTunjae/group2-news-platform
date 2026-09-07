@@ -13,7 +13,6 @@ export default function RootLayout({ children }) {
 			<html lang="en">
 				<body>
 					{children}
-					<footer>All rights reserved © {currentYear} </footer>
 				</body>
 			</html>
 		</StoryblokProvider>
