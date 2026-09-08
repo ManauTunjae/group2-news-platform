@@ -1,3 +1,4 @@
+import "./globals.css";
 import StoryblokProvider from '@/components/StoryblokProvider';
 import { getStoryblokApi } from '@storyblok/react/rsc';
 import { StoryblokServerComponent } from '@storyblok/react/rsc';
