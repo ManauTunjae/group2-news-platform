@@ -1,5 +1,6 @@
 import Page from '@/components/Page';
 import Footer from '@/components/Footer';
+import Author from '@/components/Author';
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc';
 
 export const getStoryblokApi = storyblokInit({
@@ -8,6 +9,7 @@ export const getStoryblokApi = storyblokInit({
 	components: {
 		page: Page,
 		footer: Footer,
+		author: Author,
 	},
 	apiOptions: {
 		/** Set the correct region for your space. Learn more: https://www.storyblok.com/docs/packages/storyblok-js#example-region-parameter */
