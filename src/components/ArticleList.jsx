@@ -3,13 +3,19 @@ import { storyblokEditable } from '@storyblok/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default async function ArticleList({ blok }) {
+export default async function ArticleList({ blok, mainCategory, subCategory }) {
 	const storyblokApi = getStoryblokApi();
 
 	const { data } = await storyblokApi.getStories({
 		version: 'published',
 		starts_with: 'articles/',
 		content_type: 'article-post',
+		...(mainCategory && {
+			filter_query: {
+				main_category: { in: mainCategory },
+				...(subCategory && { sub_category: { in: subCategory } }),
+			},
+		}),
 	});
 
 	const [featured, ...rest] = data.stories;
