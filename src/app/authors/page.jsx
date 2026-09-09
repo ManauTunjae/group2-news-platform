@@ -53,7 +53,7 @@ export default async function AuthorsPage() {
 								</p>
 
 								<span className="mt-4 text-sm font-medium text-blue-600 opacity-0 transition-opacity group-hover:opacity-100">
-									Läs mer →
+									Read more →
 								</span>
 							</Link>
 						</li>
