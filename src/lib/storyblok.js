@@ -1,5 +1,8 @@
 import Page from '@/components/Page';
 import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import NavLink from '@/components/NavLink';
+import Config from '@/components/config';
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc';
 
 export const getStoryblokApi = storyblokInit({
@@ -8,6 +11,10 @@ export const getStoryblokApi = storyblokInit({
 	components: {
 		page: Page,
 		footer: Footer,
+		header: Header, 
+		"nav-link": NavLink, 
+		config: Config,
+
 	},
 	apiOptions: {
 		/** Set the correct region for your space. Learn more: https://www.storyblok.com/docs/packages/storyblok-js#example-region-parameter */
