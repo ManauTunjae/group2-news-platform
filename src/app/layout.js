@@ -1,4 +1,4 @@
-import "./globals.css";
+import './globals.css';
 import StoryblokProvider from '@/components/StoryblokProvider';
 import { getStoryblokApi } from '@storyblok/react/rsc';
 import { StoryblokServerComponent } from '@storyblok/react/rsc';
@@ -9,8 +9,6 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-	const currentYear = new Date().getFullYear();
-
 	const storyblokApi = getStoryblokApi();
 	const { data } = await storyblokApi.get('cdn/stories/config', {
 		version: 'draft',
