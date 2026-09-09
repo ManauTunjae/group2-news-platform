@@ -1,5 +1,8 @@
 import Page from '@/components/Page';
 import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import NavLink from '@/components/NavLink';
+import Config from '@/components/config';
 import Author from '@/components/Author';
 import ArticlePost from '@/components/ArticlePost';
 import ArticleList from '@/components/ArticleList';
@@ -11,14 +14,15 @@ export const getStoryblokApi = storyblokInit({
 	components: {
 		page: Page,
 		footer: Footer,
+		header: Header,
+		'nav-link': NavLink,
+		config: Config,
 		author: Author,
 		'article-post': ArticlePost,
 		'article-list': ArticleList,
 	},
 	apiOptions: {
-		/** Set the correct region for your space. Learn more: https://www.storyblok.com/docs/packages/storyblok-js#example-region-parameter */
 		region: process.env.STORYBLOK_REGION || 'eu',
-		/** The following code is only required when creating a Storyblok space directly via the Blueprints feature. */
 		endpoint: process.env.STORYBLOK_API_BASE_URL
 			? `${new URL(process.env.STORYBLOK_API_BASE_URL).origin}/v2`
 			: undefined,
