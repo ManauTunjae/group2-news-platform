@@ -7,6 +7,14 @@ import Link from 'next/link';
 export default async function ArticlePost({ blok }) {
 	const renderedContent = renderRichText(blok.content);
 
+	const CATEGORY_LABELS = {
+		sverige: 'Sverige',
+		varlden: 'Världen',
+		sport: 'Sport',
+		ekonomi: 'Ekonomi',
+		teknik: 'Teknik',
+	};
+
 	return (
 		<article {...storyblokEditable(blok)} className="pb-16">
 			<div className="mx-auto max-w-3xl px-4 pt-8">
@@ -20,12 +28,12 @@ export default async function ArticlePost({ blok }) {
 				<div className="mt-6 flex items-center gap-2">
 					{blok.main_category && (
 						<span className="text-xs font-semibold uppercase tracking-wide text-blue-700">
-							{blok.main_category}
+							{CATEGORY_LABELS[blok.main_category] || blok.main_category}
 						</span>
 					)}
 					{blok.sub_category && (
 						<span className="text-xs font-semibold uppercase tracking-wide text-gray-400">
-							· {blok.sub_category}
+							· {CATEGORY_LABELS[blok.sub_category] || blok.sub_category}
 						</span>
 					)}
 				</div>

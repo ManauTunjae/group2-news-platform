@@ -6,7 +6,7 @@ export default async function ArticlesPage({ searchParams }) {
 
 	const storyblokApi = getStoryblokApi();
 	const { data } = await storyblokApi.get('cdn/stories/articles', {
-		version: 'draft',
+		version: 'published',
 	});
 	return <StoryblokServerComponent blok={data.story.content} />;
 }

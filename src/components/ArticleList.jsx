@@ -7,7 +7,7 @@ export default async function ArticleList({ blok }) {
 	const storyblokApi = getStoryblokApi();
 
 	const { data } = await storyblokApi.getStories({
-		version: 'draft',
+		version: 'published',
 		starts_with: 'articles/',
 		content_type: 'article-post',
 	});
@@ -21,18 +21,20 @@ export default async function ArticleList({ blok }) {
 		>
 			<div className="space-y-10">
 				{featured && (
-					<article className="group overflow-hidden rounded-2xl border border-gray-200">
+					<article className="group overflow-hidden rounded-lg border border-gray-200">
 						<Link href={`/${featured.full_slug}`}>
-							<div className="relative h-72 w-full sm:h-96">
-								<Image
-									src={featured.content.image.filename}
-									alt={featured.content.title}
-									fill
-									className="object-cover"
-									sizes="(min-width: 640px) 800px, 100vw"
-									priority
-								/>
-							</div>
+							{featured.content.image?.filename && (
+								<div className="relative h-72 w-full sm:h-96">
+									<Image
+										src={featured.content.image.filename}
+										alt={featured.content.title}
+										fill
+										className="object-cover"
+										sizes="(min-width: 640px) 800px, 100vw"
+										priority
+									/>
+								</div>
+							)}
 						</Link>
 						<div className="p-6">
 							<h2 className="text-2xl font-bold leading-tight sm:text-3xl">
@@ -52,7 +54,7 @@ export default async function ArticleList({ blok }) {
 					{rest.map((story) => (
 						<article
 							key={story.uuid}
-							className="flex items-center gap-4 overflow-hidden p-3 rounded-xl border border-gray-200"
+							className="group flex items-center gap-4 overflow-hidden rounded-lg border border-gray-200 p-3"
 						>
 							<div className="min-w-0 flex-1">
 								<h2 className="text-lg font-semibold leading-snug">
@@ -63,21 +65,23 @@ export default async function ArticleList({ blok }) {
 										{story.content.title}
 									</Link>
 								</h2>
-								<p className="mt-2 text-sm text-gray-600">
+								<p className="mt-2 line-clamp-2 text-sm text-gray-600">
 									{story.content.summary}
 								</p>
 							</div>
-							<Link href={`/${story.full_slug}`} className="">
-								<div className="relative h-24 w-32 overflow-hidden rounded-lg sm:h-28 sm:w-40">
-									<Image
-										src={story.content.image.filename}
-										alt={story.content.title}
-										fill
-										className="object-cover"
-										sizes="160px"
-									/>
-								</div>
-							</Link>
+							{story.content.image?.filename && (
+								<Link href={`/${story.full_slug}`} className="shrink-0">
+									<div className="relative h-24 w-32 overflow-hidden rounded-lg sm:h-28 sm:w-40">
+										<Image
+											src={story.content.image.filename}
+											alt={story.content.title}
+											fill
+											className="object-cover"
+											sizes="160px"
+										/>
+									</div>
+								</Link>
+							)}
 						</article>
 					))}
 				</div>
