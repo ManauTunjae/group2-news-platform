@@ -1,5 +1,6 @@
 import Page from '@/components/Page';
 import Footer from '@/components/Footer';
+import Author from '@/components/Author';
 import ArticlePost from '@/components/ArticlePost';
 import ArticleList from '@/components/ArticleList';
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc';
@@ -10,6 +11,7 @@ export const getStoryblokApi = storyblokInit({
 	components: {
 		page: Page,
 		footer: Footer,
+		author: Author,
 		'article-post': ArticlePost,
 		'article-list': ArticleList,
 	},
