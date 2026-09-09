@@ -7,6 +7,7 @@ import Author from '@/components/Author';
 import ArticlePost from '@/components/ArticlePost';
 import ArticleList from '@/components/ArticleList';
 import { apiPlugin, storyblokInit } from '@storyblok/react/rsc';
+import HomePage from '@/app/page';
 
 export const getStoryblokApi = storyblokInit({
 	accessToken: process.env.STORYBLOK_DELIVERY_API_TOKEN,
@@ -20,6 +21,7 @@ export const getStoryblokApi = storyblokInit({
 		author: Author,
 		'article-post': ArticlePost,
 		'article-list': ArticleList,
+		homepage: HomePage,
 	},
 	apiOptions: {
 		region: process.env.STORYBLOK_REGION || 'eu',
