@@ -15,15 +15,15 @@ export default async function AuthorsPage() {
 		<div className="mx-auto max-w-6xl px-4 py-12">
 			<div className="mb-10">
 				<h1 className="text-3xl font-bold tracking-tight text-zinc-900 sm:text-4xl">
-					Our authors
+					Våra författare
 				</h1>
 				<p className="mt-2 text-zinc-500">
-					Meet the journalists behind our articles.
+					Möt journalisterna bakom våra texter
 				</p>
 			</div>
 
 			{authors.length === 0 ? (
-				<p className="text-zinc-500">No authors found.</p>
+				<p className="text-zinc-500">Inga författare hittades</p>
 			) : (
 				<ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 					{authors.map((author) => (
@@ -53,7 +53,7 @@ export default async function AuthorsPage() {
 								</p>
 
 								<span className="mt-4 text-sm font-medium text-blue-600 opacity-0 transition-opacity group-hover:opacity-100">
-									Read more →
+									Läs mer →
 								</span>
 							</Link>
 						</li>
