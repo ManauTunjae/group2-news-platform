@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default async function Author({ blok, uuid }) {
 	const storyblokApi = getStoryblokApi();
 	const { data: postsData } = await storyblokApi.getStories({
-		version: 'draft',
+		version: 'published',
 		starts_with: 'articles/',
 		content_type: 'article-post',
 		filter_query: {

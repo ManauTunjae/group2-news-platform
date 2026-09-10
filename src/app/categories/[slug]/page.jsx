@@ -10,7 +10,7 @@ export default async function CategoryPage({ params, searchParams }) {
 	let story;
 	try {
 		const { data } = await storyblokApi.get(`cdn/stories/categories/${slug}`, {
-			version: 'draft',
+			version: 'published',
 		});
 		story = data.story;
 	} catch {
