@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default async function AuthorsPage() {
 	const storyblokApi = getStoryblokApi();
 	const { data } = await storyblokApi.getStories({
-		version: 'draft',
+		version: 'published',
 		content_type: 'author',
 		starts_with: 'authors/',
 	});
