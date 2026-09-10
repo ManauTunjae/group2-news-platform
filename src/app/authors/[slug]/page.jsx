@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 export async function generateStaticParams() {
 	const storyblokApi = getStoryblokApi();
 	const { data } = await storyblokApi.getStories({
-		version: 'draft',
+		version: 'published',
 		content_type: 'author',
 		starts_with: 'authors/',
 	});
@@ -22,7 +22,7 @@ export default async function AuthorPage({ params }) {
 	let authorStory;
 	try {
 		const { data } = await storyblokApi.get(`cdn/stories/authors/${slug}`, {
-			version: 'draft',
+			version: 'published',
 		});
 		authorStory = data.story;
 	} catch {
