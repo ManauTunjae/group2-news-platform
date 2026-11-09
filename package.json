@@ -17,11 +17,11 @@
 	},
 	"devDependencies": {
 		"@eslint/eslintrc": "^3",
-		"@netlify/plugin-nextjs": "^5.15.8",
-		"@tailwindcss/postcss": "^4.3.3",
+		"@netlify/plugin-nextjs": "^5.16.6",
+		"@tailwindcss/postcss": "^4.3.4",
 		"eslint": "^10",
-		"eslint-config-next": "16.1.6",
-		"postcss": "^8.5.28",
+		"eslint-config-next": "16.4.5",
+		"postcss": "^8.5.32",
 		"tailwindcss": "^4.3.3"
 	}
 }
